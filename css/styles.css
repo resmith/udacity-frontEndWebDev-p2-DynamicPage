@@ -1,0 +1,169 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+
+@media (max-width: 800px) {
+  body {
+    font-size: 0.6em;
+  }
+
+  .contentContainer {
+    flex: 8;
+    padding: 2px 2px 2px 2px;
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  body {
+    font-size: 1em;
+  }
+
+  .contentContainer {
+    flex: 8;
+    padding: 2px 2px 2px 2px;
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.1em;
+  }
+
+  .contentContainer {
+    flex: 8;
+    padding: 2px 2px 2px 2px;
+    margin-left: 40px;
+  }
+}
+
+/* Page Structure */
+.pageContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 2px 2px 2px;
+  margin: 2px 2px 2px 2px;
+  flex: 1;
+}
+
+/* ---- Base Rules ---- */
+body {
+  background: rgb(136, 203, 171);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+  font-family: "Merriweather", serif;
+  color: #fff;
+}
+
+/* Typeography General*/
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 3em;
+}
+
+@media only screen and (min-width: 35em) {
+  h1 {
+    font-size: 5em;
+  }
+}
+
+h2 {
+  border-bottom: 1px solid #cc1;
+  font-family: "Oxygen", Sans-Serif;
+  font-size: 3em;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6em;
+  color: #eee;
+}
+
+/* ---- Layout Rules ---- */
+main {
+  margin: 1vh 1em 1vh;
+}
+
+.main__hero {
+  min-height: 40vh;
+  padding-top: 0.5em;
+  text-align: center;
+}
+
+/* Navigation Styles*/
+.navbar__menu {
+  position: fixed;
+  overflow-x: hidden;
+}
+
+.navbar__menu li {
+  display: inline-block;
+}
+
+.navbar__menu a {
+  display: block;
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar__menu a:hover {
+  background: #333;
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
+.navbar__menu_active {
+  background: rgb(160, 91, 91);
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.your-active-class {
+  background: rgb(156, 135, 135);
+  border-radius: 6px;
+  /* background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); */
+}
+
+section.your-active-class .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.your-active-class .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}

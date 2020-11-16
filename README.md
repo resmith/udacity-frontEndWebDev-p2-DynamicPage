@@ -25,4 +25,5 @@ The high-level goal is to:
 - Create a menu dynamically based on the sections within the document
 - When the user clicks on a menu item, that section should be presented
 - when a user scroll, indicate what section is the first visible
+
 # udacity-frontEndWebDev-p2-DynamicPage
