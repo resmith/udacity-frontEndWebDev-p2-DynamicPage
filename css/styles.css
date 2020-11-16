@@ -111,8 +111,13 @@ main {
   overflow-x: hidden;
 }
 
+.navbar__menu ul {
+  padding-left: 10px;
+}
+
 .navbar__menu li {
-  display: inline-block;
+  display: block;
+  list-style-type: none;
 }
 
 .navbar__menu a {

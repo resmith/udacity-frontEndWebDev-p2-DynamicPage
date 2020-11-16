@@ -24,9 +24,11 @@
     <div class="pageContainer">
       <div class="menuContainer">
         <nav class="navbar__menu">
-          <aside id="menu">
+          <aside>
             <p class="menuHeader">Links</p>
-            <!-- Code will auto insert links  -->
+            <ul id="menu">
+              <!-- Code will auto insert links  -->
+            </ul>
           </aside>
         </nav>
       </div>
@@ -110,6 +112,22 @@
                 asyncFunctionName(valuesToPass).then(valuesReturned =>
                 functionToRun(valuesReturned));
               </code>
+            </div>
+          </section>
+          <section id="section4" data-nav="Doc Frags">
+            <div class="landing__container">
+              <h2>Document Fragment</h2>
+              <p>
+                From MDN Documentation: "minimal document object that has no
+                parent. ...document fragment isn't part of the active document
+                tree structure. Changes made to the fragment don't affect the
+                document (even on reflow) or incur any performance impact when
+                changes are made."
+              </p>
+              <p>
+                Use it when creating a large number of HTML objects. Create the
+                objects attaching them to the document fragment.
+              </p>
             </div>
           </section>
         </main>

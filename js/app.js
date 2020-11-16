@@ -42,12 +42,16 @@ function createMenu() {
   const docFrag = document.createDocumentFragment();
 
   for (const section of sections) {
-    const newEl = document.createElement("a");
-    newEl.setAttribute("href", `#${section.id}`);
-    newEl.id = generateMenuLinkId(section.id);
+    const newA = document.createElement("a");
+    newA.setAttribute("href", `#${section.id}`);
     const newText = document.createTextNode(section.dataset.nav);
-    newEl.appendChild(newText);
-    docFrag.appendChild(newEl);
+    newA.appendChild(newText);
+
+    const newLi = document.createElement("li");
+    newLi.id = generateMenuLinkId(section.id);
+    newLi.appendChild(newA);
+
+    docFrag.appendChild(newLi);
   }
 
   menuTarget.appendChild(docFrag);
